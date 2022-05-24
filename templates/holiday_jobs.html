@@ -1,0 +1,5 @@
+{% from "helpers.html" import make_title_with_borders with context %}
+{% from "helpers.html" import make_experiences_sections with context %}
+
+{{make_title_with_borders(title="Ferienjobs")}}
+{{make_experiences_sections(experiences=holiday_jobs, section_name='holiday-jobs')}}

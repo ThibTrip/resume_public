@@ -1,0 +1,55 @@
+{% include 'contact.html' %}
+
+<!-- OPEN SOURCE | ONLINE PRESENCE -->
+<section class="public-works">
+    <h2 class="panel-title">Öffentliche Arbeiten</h2>
+    <ul class="no-bullets mb-3">
+        <li class="mb-2">Co-Administrator der <a href="https://www.meetup.com/fr-FR/Python-User-Group-Freiburg/">Python User Group Freiburg</a> mit guter <a href="https://github.com/ThibTrip/thib/#presentations">Vortragserfahrung</a></li>
+        <li>Entwickler von Open Source Python Bibliotheken - <a href="https://github.com/ThibTrip/pangres/">pangres</a> um SQL Tabelle zu aktualisieren und das Dokumentationstool <a href="https://github.com/ThibTrip/npdoc_to_md/">npdoc_to_md</a></li>
+    </ul>
+</section>
+
+<!-- SKILLS -->
+<!-- Thanks to this SO post for the bar label alignment: https://stackoverflow.com/a/17326764/10551772 -->
+{% macro make_progress_skill_section(title, items) -%}
+<section class="skill-section">
+    <h2 class="mt-4">{{title}}</h2>
+
+    {% for item in items %}
+    <div class="row" style="height: 1.8rem;">
+        <div class="col-5 col-print-5 col-xxl-4 my-auto">
+            <img class="bullet-icon" src="{{ url_for('static', filename = 'icons/' + item.icon_name) }}" alt={{item.icon_name}}>
+            <label class="progress-label">{{item.label}}</label>
+        </div>
+        <div class="col my-auto">
+            <div class="progress position-relative">
+                <div class="progress-bar"
+                     role="progressbar"
+                     aria-valuenow={{item.progress}}
+                     aria-valuemin="0"
+                     aria-valuemax="100"
+                     style={{'width:' + item.progress|string + '%;background-color:'+ item.color + '!important;'}}>
+                    <span class="justify-content-center d-flex position-absolute w-100">{{item.label_bar}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+{%- endmacro %}
+
+
+<!-- PROGRAMMING LANGUAGES -->
+{{ make_progress_skill_section(title='Programmiersprachen', items=programming_languages) }}
+
+<!-- TOOLS -->
+{{ make_progress_skill_section(title='Werkzeuge', items=tools) }}
+
+<!-- MARKUP LANGUAGES -->
+{{ make_progress_skill_section(title='Markup', items=markup_languages) }}
+
+<!-- LANGUAGES -->
+{{ make_progress_skill_section(title='Sprachen', items=languages) }}
+
+<!-- SOFT SKILLS -->
+{% include 'soft_skills.html' %}

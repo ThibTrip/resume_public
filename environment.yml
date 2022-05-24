@@ -1,0 +1,10 @@
+name: resume-dev
+dependencies:
+  - python=3.10
+  - ipykernel  # for using the conda env inside Jupyter
+  - pip
+  - pip:
+      - fire
+      - flask
+      - loguru
+      - plumbum
