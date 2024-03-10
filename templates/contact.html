@@ -1,0 +1,33 @@
+<div class="row">
+    <a class="col mb-4" target="_blank" href="{{ url_for('static', filename='imgs/profilepic.jpg') }}">
+        <img class="rounded-circle" style="max-width: 100%;" src="{{ url_for('static', filename='imgs/profilepic-150x150.jpg') }}"
+             alt="Profile pic"/>
+    </a>
+
+    <div class="col-6 mr-3">
+        <h1>Thibault BETREMIEUX</h1>
+        <p class="mb-2"><i>Data Analyst | Python Software Entwickler</i></p>
+        <a id="print-button" class="btn border mb-2 me-2" href="Javascript:window.print();"
+           style="height: 35px; background-color:#35475a !important;">
+          <img src="{{ url_for('static', filename='icons/print-white.png') }}"
+               alt="printer icon" width="20" height="20"/>
+        </a>
+        <a id="source-code-button" class="btn border mb-2" href="https://github.com/ThibTrip/resume_public"
+           style="height: 35px; color: white; background-color:#35475a !important;">
+          Quellcode
+        </a>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <ul class="bullet-icons mb-0">
+        <li class="bullet-icons" style="background-image: url({{url_for('static', filename='icons/passport-white.png')}});">französisch</li>
+        <li class="bullet-icons" style="background-image: url({{url_for('static', filename='icons/envelope-white.png')}});">
+            <a href={{"mailto:" + encoded_email | safe}}>{{encoded_email | safe}}</a>
+        </li>
+        <li class="bullet-icons" style="background-image: url({{url_for('static', filename='icons/location-white.png')}});"><p class="mb-0">Freiburg im Breisgau</p></li>
+        <li class="bullet-icons mb-2 mt-1" style="background-image: url({{url_for('static', filename='icons/github-white.png')}});">
+            <a href="https://github.com/ThibTrip/">github.com/ThibTrip</a>
+        </li>
+    </ul>
+</div>

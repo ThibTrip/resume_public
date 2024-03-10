@@ -1,0 +1,250 @@
+/* CONTAINERS */
+#top-container, #bottom-container {
+    width: 100%;
+    max-width: 103rem;
+}
+
+#top-right-panel {
+    background-color: white !important;
+}
+
+#top-left-panel {
+    background-color: #464c55;
+    color: white;
+    height: 100%;
+}
+
+/* LINKS INSIDE CONTAINERS */
+
+#top-right-panel a:link, a:visited, #top-left-panel a:link, a:visited {
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#top-left-panel a:link {
+    color: #8ab0e9;
+}
+
+#top-left-panel a:visited {
+    color: #bea3e9;
+}
+
+#top-left-panel a:hover {
+    color: #7f8d63;
+}
+
+#top-right-panel a:link {
+    color: #6686b7;
+}
+
+#top-right-panel a:visited {
+    color: #4c0f5a;
+}
+
+#top-right-panel a:hover {
+    color: #576a2f;
+}
+
+/* FONT SIZES */
+
+h1 {
+    font-size: 1.5rem !important;
+}
+
+h2 {
+    font-size: 1.3rem !important;
+}
+
+h3 {
+    font-size: 1.2rem !important;
+}
+
+p, li, span, label {
+    font-size: 1.1rem !important;
+}
+
+
+/* MISC */
+.title-icon {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+.section-title {
+    color: #557218 !important;
+}
+
+.border-title {
+    /* bootstrap default grey is not bad either (#dee2e6) */
+    border-bottom: 0.06rem solid #557218;
+    border-width: 0.2rem;
+}
+
+.experience-icon {
+    max-width: 15rem;
+    max-height: 3rem;
+}
+
+
+/* BULLETS */
+
+.no-bullets {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.bullet-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-bottom: 0.3rem;
+    margin-right: 0.3rem;
+}
+
+.bullet-icon-inline {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-left: 0.6rem;
+    margin-right: 0.3rem;
+}
+
+.bullet-icons {
+    list-style-type: none;
+    background-repeat: no-repeat;
+    background-position-y: 0.2rem;
+    background-size: 1rem 1rem;
+    padding-left: 1.5rem;
+}
+
+
+/* don't display the job section twice on small screens, since it's a single scrolling block and not 2 pages */
+@media only screen and (max-width: 767.98px) {
+    .pagebreak-title {
+        display: none !important;
+    }
+}
+
+/* PRINTING - All values are optimized for A4 portrait mode! */
+@media print {
+    body {
+        -webkit-print-color-adjust: exact; /*chrome & webkit browsers*/
+        color-adjust: exact; /*firefox & IE */
+        width: 1098px; /* should be 1123px for A4 but somehow it does not fit (this is the pixel-perfect value) */
+    }
+
+    #print-button {
+        display: none !important;
+    }
+
+    #source-code-button {
+        display: none !important;
+    }
+
+    .core-skill {
+        max-width: 320px !important;
+    }
+
+    h1 {
+        font-size: 1.3rem !important;
+    }
+
+    h2 {
+        font-size: 1.2rem !important;
+    }
+
+    h3 {
+        font-size: 1.1rem !important;
+    }
+
+    p, li, span, label {
+        font-size: 0.90rem !important;
+    }
+
+    #top-right-panel {
+        padding-top: 0 !important;
+        background-color: white !important;
+    }
+
+    /* d-flex (used for filling the left panel to the bottom
+    does not work when printing. I found no solution online
+    so I placed a background of the same color behind with 
+    an absolute position */
+    /* note that page-break-after instead of page-break-before works as well */
+    .pagebreak {
+        clear: both;
+        page-break-before: always;
+    }
+
+    @media only screen and (max-width: 767.98px) {
+        /* Adjust the max-width as per your 'sm' breakpoint */
+        .pagebreak-title {
+            display: none !important;
+        }
+    }
+
+    /* thanks to this SO post... https://stackoverflow.com/a/28152320 
+    note that bootstrap used to deliver a print css but that is not
+    the case anymore */
+    .col-print-1 {
+        width: 8% !important;
+        float: left !important;
+    }
+
+    .col-print-2 {
+        width: 16% !important;
+        float: left !important;
+    }
+
+    .col-print-3 {
+        width: 25% !important;
+        float: left !important;
+    }
+
+    .col-print-4 {
+        width: 33% !important;
+        float: left !important;
+    }
+
+    .col-print-5 {
+        width: 42% !important;
+        float: left !important;
+    }
+
+    .col-print-6 {
+        width: 50% !important;
+        float: left !important;
+    }
+
+    .col-print-7 {
+        width: 58% !important;
+        float: left !important;
+    }
+
+    .col-print-8 {
+        width: 66% !important;
+        float: left !important;
+    }
+
+    .col-print-9 {
+        width: 75% !important;
+        float: left !important;
+    }
+
+    .col-print-10 {
+        width: 83% !important;
+        float: left !important;
+    }
+
+    .col-print-11 {
+        width: 92% !important;
+        float: left !important;
+    }
+
+    .col-print-12 {
+        width: 100% !important;
+        float: left !important;
+    }
+
+}

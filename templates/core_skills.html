@@ -1,0 +1,28 @@
+{% from "helpers.html" import make_title_with_borders with context %}
+
+{{make_title_with_borders(title="Kernkompetenzen", include_top_margin=false)}}
+
+{% macro make_core_skills_section(core_skill_element) -%}
+<div class="col-12 col-lg-6 ps-3 text-wrap core-skill">
+    <h3>{{core_skill_element.title}}</h3>
+    <ul class="mb-2" style="padding-left: 19px;">
+        {% for item in core_skill_element.items %}
+        <li>{{item | safe}}</li>
+        {% endfor %}
+    </ul>
+</div>
+{%- endmacro %}
+
+<section class="core-skills">
+    <div class="row mb-2">
+    {{make_core_skills_section(core_skill_element=data_wrangling)}}
+    {{make_core_skills_section(core_skill_element=library_dev)}}
+    </div>
+</section>
+
+<section class="core-skills">
+    <div class="row">
+    {{make_core_skills_section(core_skill_element=data_viz)}}
+    {{make_core_skills_section(core_skill_element=webscraping)}}
+    </div>
+</section>

@@ -1,0 +1,15 @@
+{% for soft_skill in soft_skills %}
+<section class="row soft-skill text-wrap">
+    <h2 class="mb-2 mt-4">{{soft_skill.title}}</h2>
+
+    {% if soft_skill.items|length == 1 %}
+        <p>{{soft_skill.items[0] | safe}}</p>
+    {% else %}
+        <ul style="padding-left:2rem;">
+        {% for item in soft_skill.items %}
+            <li>{{item | safe}}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+</section>
+{% endfor %}

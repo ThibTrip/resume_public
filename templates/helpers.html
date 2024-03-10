@@ -1,0 +1,52 @@
+<!-- contains functions common to multiple templates -->
+
+{% macro make_experiences_sections(experiences, section_name) -%}
+<section id={{section_name}} class="row text-wrap">
+{% set index = 0 %}
+{% for exp in experiences %}
+    {% set index = index + 1 %}
+    {% if exp.icon_name %}
+    <div class="row mb-2">
+        <div class="col">
+    {% endif %}
+            <h3>{{exp.title}}&nbsp;/&nbsp;{{exp.name}}</h3>
+            <div class="row">
+                <p class="col-auto mb-1"><img class="bullet-icon" src="{{url_for('static', filename='icons/calendar.svg')}}" alt="calendar icon"><i>{{exp.date_range}}</i></p>
+                <p class="col-auto mb-1"><img class="bullet-icon" src="{{url_for('static', filename='icons/location.svg')}}" alt="location icon"><i>{{exp.location}}</i></p>
+            </div>
+
+    {% if exp.icon_name %}
+            </div>
+        <div class="col-auto pe-0"><img class="experience-icon" src="{{url_for('static', filename='icons/' + exp.icon_name)}}" alt="calendar icon"></div>
+    </div>
+    {% endif %}
+
+    {% if exp.items|length == 1 %}
+        <p>{{exp.items[0] | safe}}</p>
+    {% else %}
+        {% if index == (experiences|length) - 1 %}    
+        <ul class="mb-1" style="padding-left:2rem;">
+        {% else %}
+        <ul class="mb-4" style="padding-left:2rem;">
+        {% endif %}
+
+        {% for item in exp.items %}
+            <li>{{item | safe}}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+
+{% endfor %}
+</section>
+{%- endmacro %}
+
+
+{% macro make_title_with_borders(title, include_top_margin=true) -%}
+{% if include_top_margin %}
+<div class="border-title mt-2"></div>
+{% else %}
+<div class="border-title"></div>
+{% endif %}
+<h2 class="section-title mt-2 mb-2">{{title}}</h2>
+<div class="border-title mb-4"></div>
+{%- endmacro %}

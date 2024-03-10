@@ -1,0 +1,5 @@
+{% from "helpers.html" import make_title_with_borders with context %}
+{% from "helpers.html" import make_experiences_sections with context %}
+
+{{make_title_with_borders(title="Studium", include_top_margin=false)}}
+{{ make_experiences_sections(experiences=studies, section_name='studies') }}

@@ -1,0 +1,6 @@
+{% from "helpers.html" import make_title_with_borders with context %}
+{% from "helpers.html" import make_experiences_sections with context %}
+
+{{make_title_with_borders(title="Praktika und Ferienjobs", include_top_margin=false)}}
+{{make_experiences_sections(experiences=internships, section_name='internships')}}
+{{make_experiences_sections(experiences=holiday_jobs, section_name='holiday-jobs')}}
